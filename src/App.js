@@ -9,26 +9,31 @@ export default class App extends Component {
   constructor(){
       super()
       this.state = {
-          search:""
+          search:"",
+          language:"hi"
       }
   }
  
   changeSearch = (data)=>{
       this.setState({search:data})
   }
+  chnangeLang = (data) => {
+    this.setState({language:data})
+    console.log(data)
+  }
   render() {
   return (
     <> 
   <BrowserRouter>  
-  <Menu/>
+  <Menu chnangeLang={this.chnangeLang} />
   <Routes>
-    <Route path="/" element={<Home search={this.state.search} q="All" />} /> 
-    <Route path="/Politics" element={<Home search={this.state.search} q="Politics" />} /> 
-    <Route path="/Science" element={<Home search={this.state.search} q="Science" />} /> 
-    <Route path="/Techonolgy" element={<Home search={this.state.search} q="Technology" />} /> 
-    <Route path="/Sports" element={<Home search={this.state.search} q="Sports" />} /> 
-    <Route path="/Jokes" element={<Home search={this.state.search} q="Jokes" />} /> 
-    <Route path="/Cricket" element={<Home search={this.state.search} q="Cricket" />} /> 
+    <Route path="/" element={<Home language={this.state.language} search={this.state.search} q="All"  />} /> 
+    <Route path="/Politics" element={<Home language={this.state.language} search={this.state.search} q="Politics" />} /> 
+    <Route path="/Science" element={<Home  language={this.state.language}search={this.state.search} q="Science" />} /> 
+    <Route path="/Technology" element={<Home  language={this.state.language}search={this.state.search} q="Technology" />} /> 
+    <Route path="/Sports" element={<Home language={this.state.language} search={this.state.search} q="Sports" />} /> 
+    <Route path="/Jokes" element={<Home language={this.state.language} search={this.state.search} q="Jokes" />} /> 
+    <Route path="/Cricket" element={<Home language={this.state.language} search={this.state.search} q="Cricket" />} /> 
     </Routes>
     </BrowserRouter>
     </>

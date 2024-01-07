@@ -10,7 +10,7 @@ export default class Home extends Component {
     }
   }
   async getAPIData(){
-    var response = await fetch(`https://newsapi.org/v2/everything?q=${this.props.q}&language=hi&pageSize=8&apiKey=a86f22a30fb7431dbbcc8d0317b839ec`)
+    var response = await fetch(`https://newsapi.org/v2/everything?q=${this.props.q}&language=${this.props.language}&pageSize=8&apiKey=a86f22a30fb7431dbbcc8d0317b839ec`)
     var result = await response.json();
     this.setState({
       articals : result.articles,
@@ -21,7 +21,7 @@ export default class Home extends Component {
     this.getAPIData()
   }
   componentDidUpdate(old) {
-    if (this.props.q !== old.q)
+    if (this.props.q !== old.q || this.props.language !== old.language)
         this.getAPIData()
 }
   render() {
@@ -34,7 +34,7 @@ export default class Home extends Component {
                   return <NewsItem 
                   key = {index}
                   newsTitle = {item.title}
-                  description = {item.description.slice(0, 300)}
+                  description = {item.description.slice(0, 110) + "..."}
                   pic = {item.urlToImage}
                   url = {item.url}
                   />
