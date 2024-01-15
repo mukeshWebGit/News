@@ -36,6 +36,16 @@
     transform: rotate(360deg);
   }
 }
+body{margin: 0px; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px;}
+ul {list-style: none; padding: 0;}
+.menu{padding: 10px 20px; text-align: center; background: #111; color: #ccc;}
+.menu a{color: #ccc; text-decoration: none; display: block; padding: 0 10px;}
+.menu ul{display: flex; justify-content: center;}
+.menu ul li{position: relative;}
+.menu ul ul{display: block; background: #fafafa; border-radius: 10px; position: absolute; left: 0; top: 100%;
+box-shadow: 0 0 15px rgba(0, 0, 0, .15); padding: 10px 0; width: 100%; display: none;}
+.menu ul li:hover ul{display: block;}
+.menu ul ul li{ color: #333; padding: 10px 15px; cursor: pointer;}
 .container{padding: 0 25px; max-width: 1200px; margin: 0 auto;}
 .row {
   display: -webkit-box;

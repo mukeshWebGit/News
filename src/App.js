@@ -10,7 +10,8 @@ export default class App extends Component {
       super()
       this.state = {
           search:"",
-          language:"hi"
+          language:"hi",
+          pageSize:9
       }
   }
  
@@ -19,21 +20,23 @@ export default class App extends Component {
   }
   chnangeLang = (data) => {
     this.setState({language:data})
-    console.log(data)
+  }
+  chnangePageSize = (data) => {
+    this.setState({pageSize:data})
   }
   render() {
   return (
     <> 
   <BrowserRouter>  
-  <Menu chnangeLang={this.chnangeLang} />
+  <Menu chnangeLang={this.chnangeLang} chnangePageSize={this.chnangePageSize}/>
   <Routes>
-    <Route path="/" element={<Home language={this.state.language} search={this.state.search} q="All"  />} /> 
-    <Route path="/Politics" element={<Home language={this.state.language} search={this.state.search} q="Politics" />} /> 
-    <Route path="/Science" element={<Home  language={this.state.language}search={this.state.search} q="Science" />} /> 
-    <Route path="/Technology" element={<Home  language={this.state.language}search={this.state.search} q="Technology" />} /> 
-    <Route path="/Sports" element={<Home language={this.state.language} search={this.state.search} q="Sports" />} /> 
-    <Route path="/Jokes" element={<Home language={this.state.language} search={this.state.search} q="Jokes" />} /> 
-    <Route path="/Cricket" element={<Home language={this.state.language} search={this.state.search} q="Cricket" />} /> 
+    <Route path="/" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="All"  />} /> 
+    <Route path="/Politics" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Politics" />} /> 
+    <Route path="/Science" element={<Home  language={this.state.language}search={this.state.search} pageSize={this.state.pageSize} q="Science" />} /> 
+    <Route path="/Technology" element={<Home  language={this.state.language}search={this.state.search} pageSize={this.state.pageSize} q="Technology" />} /> 
+    <Route path="/Sports" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Sports" />} /> 
+    <Route path="/Jokes" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Jokes" />} /> 
+    <Route path="/Cricket" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Cricket" />} /> 
     </Routes>
     </BrowserRouter>
     </>

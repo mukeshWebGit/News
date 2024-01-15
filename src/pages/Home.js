@@ -10,7 +10,7 @@ export default class Home extends Component {
     }
   }
   async getAPIData(){
-    var response = await fetch(`https://newsapi.org/v2/everything?q=${this.props.q}&language=${this.props.language}&pageSize=8&apiKey=a86f22a30fb7431dbbcc8d0317b839ec`)
+    var response = await fetch(`https://newsapi.org/v2/everything?q=${this.props.q}&language=${this.props.language}&pageSize=${this.props.pageSize}&apiKey=a86f22a30fb7431dbbcc8d0317b839ec`)
     var result = await response.json();
     this.setState({
       articals : result.articles,
@@ -21,7 +21,7 @@ export default class Home extends Component {
     this.getAPIData()
   }
   componentDidUpdate(old) {
-    if (this.props.q !== old.q || this.props.language !== old.language)
+    if (this.props.q !== old.q || this.props.language !== old.language || this.props.pageSize !== old.pageSize)
         this.getAPIData()
 }
   render() {
