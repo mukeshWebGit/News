@@ -21,16 +21,23 @@ export default class Menu extends Component {
     </li>
   </ul>
   </div>
- 
-  <ul>
-    <li onClick={()=> this.props.chnangePageSize(9)}>9</li>
-    <li onClick={()=> this.props.chnangePageSize(12)}>12</li>
-    <li onClick={()=> this.props.chnangePageSize(16)}>16</li>
-  </ul>
-  <form className="d-flex" role="search" onSubmit={(e)=>this.postSearch(e)}>
-                            <input className="form-control me-2" type="search" name='search' onChange={(e)=>this.getSearch(e)} placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-light" type="submit">Search</button>
-                        </form>
+ <div className='searchBg'>
+    <div className='container'>
+      <div className='row justify-content-md-center'>
+        <ul className='col rowList'>
+          <li onClick={()=> this.props.chnangePageSize(9)}>9</li>
+          <li onClick={()=> this.props.chnangePageSize(12)}>12</li>
+          <li onClick={()=> this.props.chnangePageSize(16)}>16</li>
+        </ul>
+        <div className='col'>
+          <form className="d-flex" role="search" onSubmit={(e)=>this.postSearch(e)}>
+                <input className="form-control me-2" type="search" name='search' onChange={(e)=>this.getSearch(e)} placeholder="Search" aria-label="Search" />
+                <button className="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+        </div>
+  </div>
+  </div>
   </div>
   )
   }
