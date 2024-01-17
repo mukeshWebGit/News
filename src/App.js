@@ -28,7 +28,7 @@ export default class App extends Component {
   return (
     <> 
   <BrowserRouter>  
-  <Menu chnangeLang={this.chnangeLang} chnangePageSize={this.chnangePageSize}/>
+  <Menu chnangeLang={this.chnangeLang} chnangePageSize={this.chnangePageSize} changeSearch={this.changeSearch}/>
   <Routes>
     <Route path="/" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="All"  />} /> 
     <Route path="/Politics" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Politics" />} /> 
