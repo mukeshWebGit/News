@@ -2,6 +2,16 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export default class Menu extends Component {
+  constructor(){
+    super()
+    this.statem = ({
+      search:''
+    })
+  }
+  getSearch(e){
+    this.setState({search:e.target.search})
+    console(this.state.search)
+  }
   render() {
     return (
     <div>
