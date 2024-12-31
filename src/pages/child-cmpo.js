@@ -21,7 +21,7 @@ export default class Childpage extends Component {
         <h1>Onchnage Input</h1>
         <input type='text' name="name" onChange={(e)=> this.onChnage(e)}  placeholder='Enter Your Name'/>
         <input type='text' name="email" onChange={(e)=> this.onChnage(e)}  placeholder='Enter Your Email'/>
-        <button type='buttom'>Submite</button> 
+        <button type='buttom'>Submit</button> 
       </div>
     )
   }

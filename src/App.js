@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import { Component } from 'react';
+import Test from './pages/test';
  
 
 export default class App extends Component {
@@ -27,8 +28,10 @@ export default class App extends Component {
   render() {
   return (
     <> 
+   
   <BrowserRouter>  
-  <Menu chnangeLang={this.chnangeLang} chnangePageSize={this.chnangePageSize}/>
+  <Menu chnangeLang={this.chnangeLang} chnangePageSize={this.chnangePageSize} changeSearch={this.changeSearch}/>
+
   <Routes>
     <Route path="/" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="All"  />} /> 
     <Route path="/Politics" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Politics" />} /> 
@@ -37,8 +40,10 @@ export default class App extends Component {
     <Route path="/Sports" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Sports" />} /> 
     <Route path="/Jokes" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Jokes" />} /> 
     <Route path="/Cricket" element={<Home language={this.state.language} search={this.state.search} pageSize={this.state.pageSize} q="Cricket" />} /> 
+    <Route path="/Login" element={ <Test/>} /> 
     </Routes>
     </BrowserRouter>
+   
     </>
   )};
 } 
